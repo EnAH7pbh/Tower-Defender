@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class Attacker : MonoBehaviour {
     public bool isPlayer = true;
@@ -79,10 +77,10 @@ public class Attacker : MonoBehaviour {
             if (m != null) {
                 m.underAttack = attack;
             }
-            //Defender d = collision.gameObject.GetComponent<Attacker>();
-            //if(d !=null){
-            //d.underAttack = attack;
-            //}
+            Defender d = collision.gameObject.GetComponent<Defender> ();
+            if (d != null) {
+                d.underAttack = attack;
+            }
         }
     }
 
